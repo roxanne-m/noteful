@@ -6,24 +6,28 @@
     top: 90px;
     overflow-x: hidden;
     padding-top: 20px;
+   
   }
   /* Control the left side */
   .left {
     left: 0;
     width: 25%;
     background-color: #6d2e46;
+    height: 75%;
 
   }
   /* Control the right side */
   .right {
     right: 0;
     width: 75%;
+    height: 75%;
     background-color: #8da9c4;
   }
 
   /* Note list styling */
 ul{
     list-style-type: none;
+    margin-bottom: 100px;
 }
 
 /* Noteful header styling */
@@ -44,6 +48,28 @@ button{
     cursor: pointer;
 }
 
+/* Styling for the add note button */
+.addNote-button{
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 1px;
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/* Styling for the add folder button */
+.addFolder-button{
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 1px;
+    width: 70px;
+    height: 50px;
+    cursor: pointer;
+}
+
 /* Note list background styling */
 .list-style{
     background-color: #a26769;
@@ -53,3 +79,5 @@ button{
 .folder-style{
     background-color: white;
 }
+
+
