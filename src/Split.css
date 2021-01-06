@@ -1,83 +1,207 @@
 .split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 90px;
-    overflow-x: hidden;
-    padding-top: 20px;
-   
-  }
-  /* Control the left side */
-  .left {
-    left: 0;
-    width: 25%;
-    background-color: #6d2e46;
-    height: 75%;
-
-  }
-  /* Control the right side */
-  .right {
-    right: 0;
-    width: 75%;
-    height: 75%;
-    background-color: #8da9c4;
-  }
-
-  /* Note list styling */
-ul{
-    list-style-type: none;
-    margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  z-index: 1;
+  top: 90px;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+/* Control the left side */
+.left {
+  left: 0;
+  width: 25%;
+  background-color: #a26769;
+  padding: 10px;
+}
+/* Control the right side */
+.right {
+  right: 0;
+  width: 75%;
+  background-color: #012a4a;
+  padding: 10px;
 }
 
-/* Noteful header styling */
-.MainPage-header{
+/* Note list styling */
+ul {
+  list-style-type: none;
+}
+
+/* Noteful header, body, and main styling */
+header {
+  text-align: center;
+  color: black;
+  font-family: 'Times New Roman', 'serif';
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  overflow: hidden;
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
     text-align: center;
-    color: blue;
-    background-color: white;
+    background-color: #c9c9cf;
+    padding-top: 15px;
+    font-family: 'Times New Roman', 'serif';
 }
+
+body {
+  background-image: url(images/notefulBG.JPG);
+}
+
+
+.main-styling, .form-styling {
+  font-family: 'Times New Roman', 'serif';
+  display: flex;
+  position: absolute;
+  top: 100px;
+  bottom: 50px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* Styling for h2 title: Notes List */
+.note-list-title{
+    color: white;
+}
+
 
 /* Note button styling */
-button{
-    border-radius: 30px;
-    background-color: white;
-    border: 2px solid black;
-    padding: 1px;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
+button {
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 1px;
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  font-family: 'Times New Roman', 'serif';
+}
+
+.form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 /* Styling for the add note button */
-.addNote-button{
-    border-radius: 10px;
-    background-color: white;
-    border: 2px solid black;
-    padding: 1px;
-    width: 70px;
-    height: 50px;
-    cursor: pointer;
+.addNote-button {
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 1px;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
 }
 
 /* Styling for the add folder button */
-.addFolder-button{
-    border-radius: 10px;
-    background-color: white;
-    border: 2px solid black;
-    padding: 1px;
-    width: 70px;
-    height: 50px;
-    cursor: pointer;
+.addFolder-button {
+  border-radius: 10px;
+  background-color: white;
+  border: 2px solid black;
+  padding: 1px;
+  width: 70px;
+  height: 50px;
+  cursor: pointer;
 }
 
-/* Note list background styling */
-.list-style{
-    background-color: #a26769;
+/* Note styling */
+.list-style {
+  background-color: #f8edeb;
+}
+
+.note-style {
+  font-family: 'Times New Roman', 'serif';
 }
 
 /* Folder list styling */
-.folder-style{
-    background-color: white;
+.folder-style {
+  background-color: white;
+}
+
+.content-style {
+  color: black;
+  width: 96%;
+  padding: 20px;
+  border: 2px solid gray;
+  margin: 0;
+  background-color: white;
 }
 
 
+.addNote,
+.addFolder {
+  text-align: center;
+  color: black;
+  font-family: 'Times New Roman', 'serif';
+  font-size: 25px;
+  background-color: #a26769;
+}
+
+fieldset {
+  border-style: groove;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 25px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a26769;
+  border-radius: 25px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a373;
+}
+
+/* Mobile styling */
+@media all and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .split {
+    display: flex;
+    flex-direction: column;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+  }
+  .right {
+    display: flex;
+    flex-direction: column;
+  }
+  .content-style {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}

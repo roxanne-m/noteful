@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import ApiContext from '../ApiContext';
 import '../Split.css';
+import ErrorBoundaries from '../ErrorBoundaries';
 
 // refactor from props to context
 // look at a prop that were using
@@ -32,15 +33,17 @@ class Folder extends React.Component {
 
   render() {
     return (
-      <div>
-        <fieldset className='folder-style'>
-          <NavLink to={`/folder/${this.props.id}`}>
-            {this.getFolderName()}
-            {': '}
-          </NavLink>
-          {this.getFolderLength()}
-        </fieldset>
-      </div>
+      <ErrorBoundaries>
+        <div>
+          <fieldset className='folder-style'>
+            <NavLink to={`/folder/${this.props.id}`}>
+              {this.getFolderName()}
+              {': '}
+            </NavLink>
+            {this.getFolderLength()}
+          </fieldset>
+        </div>
+      </ErrorBoundaries>
     );
   }
 }

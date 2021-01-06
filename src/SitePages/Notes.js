@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import '../Split.css';
 import ApiContext from '../ApiContext';
+import ErrorBoundaries from '../ErrorBoundaries';
 
 class Notes extends React.Component {
   static contextType = ApiContext;
@@ -25,17 +26,19 @@ class Notes extends React.Component {
   };
   render() {
     return (
-      <div>
-        <fieldset className='list-style'>
-          <h2>
-            <Link to={`/note/${this.props.id}`}>{this.getNoteName()}</Link>
-          </h2>
-          <h3>{moment(this.getNoteModified()).format('MM-DD-YY')}</h3>
-          <button onClick={() => this.context.deleteNote(this.props.id)}>
-            Remove
-          </button>
-        </fieldset>
-      </div>
+      <ErrorBoundaries>
+        <div>
+          <fieldset className='list-style note-style'>
+            <h2>
+              <Link to={`/note/${this.props.id}`}>{this.getNoteName()}</Link>
+            </h2>
+            <h3>{moment(this.getNoteModified()).format('MM-DD-YY')}</h3>
+            <button onClick={() => this.context.deleteNote(this.props.id)}>
+              Remove
+            </button>
+          </fieldset>
+        </div>
+      </ErrorBoundaries>
     );
   }
 }
