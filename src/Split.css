@@ -38,25 +38,25 @@ header {
   overflow: hidden;
 }
 
-footer{
-    position: absolute;
-    bottom: 0px;
-    height: 50px;
-    left: 0px;
-    right: 0px;
-    overflow: hidden;
-    text-align: center;
-    background-color: #c9c9cf;
-    padding-top: 15px;
-    font-family: 'Times New Roman', 'serif';
+footer {
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  left: 0px;
+  right: 0px;
+  overflow: hidden;
+  text-align: center;
+  background-color: #c9c9cf;
+  padding-top: 15px;
+  font-family: 'Times New Roman', 'serif';
 }
 
 body {
   background-image: url(images/notefulBG.JPG);
 }
 
-
-.main-styling, .form-styling {
+.main-styling,
+.form-styling {
   font-family: 'Times New Roman', 'serif';
   display: flex;
   position: absolute;
@@ -77,10 +77,9 @@ h2 {
 }
 
 /* Styling for h2 title: Notes List */
-.note-list-title{
-    color: white;
+.note-list-title {
+  color: white;
 }
-
 
 /* Note button styling */
 button {
@@ -94,32 +93,24 @@ button {
   font-family: 'Times New Roman', 'serif';
 }
 
-.form-button{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+.form-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* Styling for the add note button */
-.addNote-button {
-  border-radius: 10px;
+.add-button {
   background-color: white;
-  border: 2px solid black;
-  padding: 1px;
-  width: 70px;
-  height: 50px;
-  cursor: pointer;
-}
-
-/* Styling for the add folder button */
-.addFolder-button {
+  border-color: black;
+  border-style: groove;
+  color: black;
   border-radius: 10px;
-  background-color: white;
-  border: 2px solid black;
-  padding: 1px;
-  width: 70px;
-  height: 50px;
-  cursor: pointer;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  padding-bottom: 3px;
+  padding-top: 3px;
 }
 
 /* Note styling */
@@ -144,7 +135,6 @@ button {
   margin: 0;
   background-color: white;
 }
-
 
 .addNote,
 .addFolder {

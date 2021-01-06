@@ -54,8 +54,8 @@ class Main extends React.Component {
             <h2>
               <b><u>Folders List</u></b>
             </h2>
-            <Link to='/add-folder'>
-              <button className='addFolder-button'>Add Folder</button>
+            <Link to='/add-folder'
+             className='add-button'>Add Folder
             </Link>
             <ul>
               {folders.map((folder) => (
@@ -69,8 +69,8 @@ class Main extends React.Component {
             <h2 className='note-list-title'>
               <b><u>Notes List</u></b>
             </h2>
-            <Link to='/add-note'>
-              <button className='addNote-button'>Add Note</button>
+            <Link to='/add-note'
+               className='add-button'>Add <br/>Note
             </Link>
             <ul>{this.generateNoteList()}</ul>
           </section>
