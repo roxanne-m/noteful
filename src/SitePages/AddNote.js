@@ -69,8 +69,7 @@ class AddNote extends React.Component {
  
 
   render() {
-    //set error variable message
-    const error = this.state.error ? <div>{this.state.error}</div> : '';
+    
     return (
       <div>
         <form className='addNote' onSubmit={(e) => this.handleSubmit(e)}>
@@ -118,7 +117,7 @@ class AddNote extends React.Component {
 }
 
 AddNote.propTypes = {
-  history: PropTypes.object,
+  history: PropTypes.object.isRequired,
   goBack: PropTypes.func,
 };
 

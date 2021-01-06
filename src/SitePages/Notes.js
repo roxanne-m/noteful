@@ -4,6 +4,7 @@ import moment from 'moment';
 import '../Split.css';
 import ApiContext from '../ApiContext';
 import ErrorBoundaries from '../ErrorBoundaries';
+import PropTypes from 'prop-types';
 
 class Notes extends React.Component {
   static contextType = ApiContext;
@@ -42,5 +43,10 @@ class Notes extends React.Component {
     );
   }
 }
+
+
+Notes.propTypes = {
+  match: PropTypes.number,
+};
 
 export default Notes;

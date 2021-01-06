@@ -47,10 +47,7 @@ class AddFolder extends React.Component{
     }
 
     render(){
-        //set error variable message
-        const error = this.state.error ? (
-            <div>{this.state.error}</div>
-        ) : ("");
+      
 
         return(
             <div>

@@ -21,6 +21,8 @@ class Main extends React.Component {
     // console.log(currentFolderId);
     let notes;
 
+
+
     if (currentFolderId) {
       notes = this.context.notes.map((note) => {
         if (note.folderId === currentFolderId) {
@@ -30,6 +32,7 @@ class Main extends React.Component {
             </li>
           );
         }
+        return notes;
       });
     } else {
       notes = this.context.notes.map((note) => {
@@ -44,6 +47,7 @@ class Main extends React.Component {
     return notes;
   };
 
+  
   render() {
     const { folders } = this.context;
     return (

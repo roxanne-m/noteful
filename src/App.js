@@ -32,7 +32,7 @@ class App extends React.Component {
       })
 
       .then(([notes, folders]) => {
-        console.log(notes, folders);
+        // console.log(notes, folders);
         this.setState({ notes, folders });
       })
 
