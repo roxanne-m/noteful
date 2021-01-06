@@ -19,7 +19,7 @@ class Content extends React.Component {
     const note = this.findNote(notes, noteId) || { content: '' };
     // console.log(note);
     const currentFolder = this.findFolder(this.context.folders, note.folderId);
-    // console.log(this.props);
+   console.log(this.context.folders);
     return (
       <ErrorBoundaries>
         <div className='form-styling'>
