@@ -6,8 +6,14 @@ import ApiContext from '../ApiContext';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ErrorBoundaries from '../ErrorBoundaries';
+// import { findNote } from '../notes-helpers'
 
 class Main extends React.Component {
+  // static defaultProps = {
+  //   match: {
+  //     params: {}
+  //   }
+  // }
   static contextType = ApiContext;
 
   // write a function
@@ -16,19 +22,31 @@ class Main extends React.Component {
   // if there is a specific folder id, filter to a new array where each note's folderId matches the current folderId
   // generate Notes components from this filtered array of notes
 
+  handleDeleteNote = (noteId) => {
+    this.props.history.push(`/`)
+  }
+  
   generateNoteList = () => {
     let currentFolderId = this.props.match.params.folderId;
-    // console.log(currentFolderId);
     let notes;
 
-
+    // worked with teddy -> 
+    // const { notes = []} = this.context
+    // const { noteId } = this.props.match.params
+    // console.log(noteId, note, 'noteId')
+    // const note = findNote(notes, noteId) || { content: '' }
 
     if (currentFolderId) {
       notes = this.context.notes.map((note) => {
         if (note.folderId === currentFolderId) {
           return (
             <li key={note.id}>
-              <Notes id={note.id} /> <br />
+              <Notes 
+                id={note.id} 
+                name={note.name}
+                modified={note.modified}
+                onDeleteNote={this.handleDeleteNote}
+              /> <br />
             </li>
           );
         }

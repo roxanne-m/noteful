@@ -44,7 +44,6 @@ class AddNote extends React.Component {
         return res.json();
       })
       .then((data) => {
-          console.log(data)
         this.context.addNote(data);
         this.props.history.goBack();
       })

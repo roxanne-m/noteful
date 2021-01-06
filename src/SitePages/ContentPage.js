@@ -4,34 +4,51 @@ import Notes from './Notes';
 import ApiContext from '../ApiContext';
 import PropTypes from 'prop-types';
 import ErrorBoundaries from '../ErrorBoundaries';
+import { findNote } from '../notes-helpers'
 
 class Content extends React.Component {
-  static contextType = ApiContext;
-  /* Function that finds notes for given note clicked on */
-  findNote = (notes = [], noteId) => notes.find((note) => note.id === noteId);
+  static defaultProps = {
+    match: {
+      params: {}
+    }
+  }
 
-  findFolder = (folders, folderId) => {
-    return folders.find((folder) => folder.id === folderId);
-  };
+  static contextType = ApiContext;
+
+  handleDeleteNote = (noteId) => {
+    this.props.history.push(`/`)
+  }
+
   render() {
     const { notes = [] } = this.context;
-    const noteId = this.props.match.params.noteId;
-    const note = this.findNote(notes, noteId) || { content: '' };
-    // console.log(note);
-    const currentFolder = this.findFolder(this.context.folders, note.folderId);
-   console.log(this.context.folders);
+    //const noteId = this.props.match.params.noteId;
+    const { noteId } = this.props.match.params
+    const note = findNote(notes, noteId) || { content: '' };
+    
+    //const currentFolder = findFolder(this.context.folders, note.folderId);
+  
     return (
       <ErrorBoundaries>
         <div className='form-styling'>
           <div className='split left note-style'>
             <button onClick={() => this.props.history.goBack()}>Go Back</button>
-            <br />
-            <br />
-            <fieldset className='folder-style'>{currentFolder.name}</fieldset>
+            {/* <br />
+            <br /> */}
+            {/* <fieldset className='folder-style'>{currentFolder.name}</fieldset> */}
           </div>
           <div className='split right note-style'>
-            <Notes id={note.id} />
-            <div className='content-style'>{note.content}</div>
+            <Notes 
+              id={note.id}
+              name={note.name}
+              modified={note.modified}
+              onDeleteNote={this.handleDeleteNote}
+            />
+            <div className='content-style'>
+              {/* {note.content} */}
+              {note.content.split(/\n \r|\n/).map((para, i) =>
+                <p key={i}>{para}</p>
+              )}
+            </div>
           </div>
         </div>
       </ErrorBoundaries>
