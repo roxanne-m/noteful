@@ -24,7 +24,7 @@ class ErrorBoundaries extends React.Component{
 }
 
 ErrorBoundaries.propTypes = {
-    children: PropTypes.isRequired
+    children: PropTypes.node.isRequired
 };
 
 export default ErrorBoundaries;
