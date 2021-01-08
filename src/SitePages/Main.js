@@ -9,11 +9,7 @@ import ErrorBoundaries from '../ErrorBoundaries';
 // import { findNote } from '../notes-helpers'
 
 class Main extends React.Component {
-  // static defaultProps = {
-  //   match: {
-  //     params: {}
-  //   }
-  // }
+ 
   static contextType = ApiContext;
 
   // write a function
