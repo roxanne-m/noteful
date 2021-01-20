@@ -1,6 +1,6 @@
 
 const baseUrl = {
-    url: 'http://localhost:9090'
+    url: 'https://peaceful-mountain-70302.herokuapp.com'
 }
 
 export default baseUrl;
