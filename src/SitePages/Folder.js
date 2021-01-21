@@ -18,26 +18,27 @@ class Folder extends React.Component {
   // Function that takes the folder id, looks through folders in context, and returns number of notes in that folder
   getFolderLength = () => {
     let length = this.context.notes.filter(
-      (note) => note.folderId === this.props.id
+      (note) => note.assigned_folder === this.props.id
     ).length;
     return length;
   };
 
   //Function that takes the folder id, looks through folders in context, and returns the name of that folder
-  getFolderName = () => {
+  getFolderTitle = () => {
     let currentFolder = this.context.folders.find(
       (folder) => folder.id === this.props.id
-    );
-    return currentFolder.name;
+    ); console.log(currentFolder);
+    return currentFolder.title;
   };
 
   render() {
+    console.log(this.context)
     return (
       <ErrorBoundaries>
         <div>
           <fieldset className='folder-style'>
             <NavLink to={`/folder/${this.props.id}`}>
-              {this.getFolderName()}
+              {this.getFolderTitle()}
               {': '}
             </NavLink>
             {this.getFolderLength()}
