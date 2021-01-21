@@ -23,7 +23,7 @@ class Main extends React.Component {
   }
   
   generateNoteList = () => {
-    let currentFolderId = this.props.match.params.folderId;
+    let currentFolderId = Number(this.props.match.params.folderId);
     let notes;
 
     // worked with teddy -> 
@@ -34,7 +34,7 @@ class Main extends React.Component {
 
     if (currentFolderId) {
       notes = this.context.notes.map((note) => {
-        if (note.folderId === currentFolderId) {
+        if (note.assigned_folder === currentFolderId) {
           return (
             <li key={note.id}>
               <Notes 

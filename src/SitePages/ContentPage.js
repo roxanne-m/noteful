@@ -23,7 +23,7 @@ class Content extends React.Component {
     const { notes = [] } = this.context;
     //const noteId = this.props.match.params.noteId;
     const { noteId } = this.props.match.params
-    const note = findNote(notes, noteId) || { content: '' };
+    const note = findNote(notes, Number(noteId)) || { content: '' };
     
     //const currentFolder = findFolder(this.context.folders, note.folderId);
   
@@ -32,9 +32,6 @@ class Content extends React.Component {
         <div className='form-styling'>
           <div className='split left note-style'>
             <button onClick={() => this.props.history.goBack()}>Go Back</button>
-            {/* <br />
-            <br /> */}
-            {/* <fieldset className='folder-style'>{currentFolder.name}</fieldset> */}
           </div>
           <div className='split right note-style'>
             <Notes 

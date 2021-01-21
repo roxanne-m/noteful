@@ -19,7 +19,7 @@ class Notes extends React.Component {
     
     let noteMatch = this.context.notes.find(
       (note) => note.id === noteId
-    );
+    )
      
     return noteMatch.title;
     // filter the notes array in context to the note that matches this.props.id
