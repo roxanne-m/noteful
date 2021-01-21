@@ -25,7 +25,7 @@ class AddFolder extends React.Component{
         // perform fetch request and error handling
         fetch(`${config.url}/folders`, {
             method: "POST",
-            body: JSON.stringify({name: fName}),
+            body: JSON.stringify({title: fName}),
             headers: {
                 "Content-Type": "application/json",
             },

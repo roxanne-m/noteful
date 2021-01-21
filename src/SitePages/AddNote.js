@@ -28,7 +28,7 @@ class AddNote extends React.Component {
     fetch(`${config.url}/notes`, {
       method: 'POST',
       body: JSON.stringify({
-        name: nName,
+        title: nName,
         content: nContent,
         folderId: targetF,
       }),
@@ -59,7 +59,7 @@ class AddNote extends React.Component {
         return (
           <option key={folder.id} value={folder.id}>
             {' '}
-            {folder.name}{' '}
+            {folder.title}{' '}
           </option>
         );
       });
