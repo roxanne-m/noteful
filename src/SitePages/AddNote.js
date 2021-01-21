@@ -30,7 +30,7 @@ class AddNote extends React.Component {
       body: JSON.stringify({
         title: nName,
         content: nContent,
-        folderId: targetF,
+        assigned_folder: targetF,
       }),
       headers: {
         'Content-Type': 'application/json',
